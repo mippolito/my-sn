@@ -10,7 +10,7 @@ var Ractive = require('ractive');
 var tap = require('gulp-tap');
 
 gulp.task('templates',function(){
-	gulp.src('./tpl/**/*.html')
+	gulp.src('./frontend/tpl/**/*.html')
 	.pipe(tap(function(file, t){
 		var precompiled = Ractive.parse(file.contents.toString());
 		precompiled = JSON.stringify(precompiled);
@@ -19,7 +19,7 @@ gulp.task('templates',function(){
 	.pipe(rename(function(path) {
 		path.extname = '.js';
 	}))
-	.pipe(gulp.dest('./tpl'))
+	.pipe(gulp.dest('./frontend/tpl'))
 });
 
 gulp.task('css',function(){
