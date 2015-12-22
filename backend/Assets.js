@@ -1,3 +1,8 @@
+var path = require('path');
+var fs = require('fs');
+
+var files = {};
+
 module.exports = function(req,res){
 	var sendError = function(message, code) {
 		if(code == undefined) {
